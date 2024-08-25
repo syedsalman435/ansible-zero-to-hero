@@ -1,0 +1,15 @@
+#create vm user and logined without entering password everytime.
+#after creating vm enable passwd as yes in below path file
+sudo vim /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
+PasswordAuthentication yes
+:wq
+sudo systemctl restart ssh
+#create user
+sudo passwd ubuntu
+type passwd
+ssh ubuntu@ip
+if you want to connect the remote withoutentering password everytime use below command
+ssh-copy-id ubuntu@ip
+enter password for first time. form next time onwrnds u can connect without password
+ssh ubuntu@ip
+
